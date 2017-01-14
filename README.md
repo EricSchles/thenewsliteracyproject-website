@@ -14,7 +14,7 @@ If you have python 2 installed, you might need to do:
 
 `pip3 install -r requirements.txt`
 
-Everything regarding deploying to heroku should be in 
+Everything regarding deploying to heroku should be in
 
 `setup.md` (in the base directory).
 
@@ -58,10 +58,13 @@ If you try creating a db:
         connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
     ```
 
-Try: 
+Try:
 * `pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start`
 
-## Unable to install pyscopg2 
+You might also need to do:
+
+`rm -rf /usr/local/var/postgres && initdb /usr/local/var/postgres -E utf8` which comes from [https://github.com/Homebrew/legacy-homebrew/issues/35240](https://github.com/Homebrew/legacy-homebrew/issues/35240)
+## Unable to install pyscopg2
 
 Try installing xcode-setup and re-run the Installation
 
