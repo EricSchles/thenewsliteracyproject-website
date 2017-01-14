@@ -70,3 +70,6 @@ Try installing xcode-setup and re-run the Installation
 
 Please see here: http://stackoverflow.com/questions/33866695/install-psycopg2-on-mac-osx-10-9-5-pg-config-pip
 
+##JavaScript Library
+
+We are using [moment.js](https://momentjs.com/) to get the local timezone for the user as a fallback in case we cannot create a date object on the frontend.  The minified version of the code exists in `app/static/js/moment.min.js`.

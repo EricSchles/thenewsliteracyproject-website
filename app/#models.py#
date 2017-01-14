@@ -46,7 +46,10 @@ class SiteVisits(db.Model):
     @friday_frequency - frequency on fridays
     @saturday_frequency - frequency on saturdays
     @sunday_frequency - frequency on sundays
-    
+    @weekday_frequency - frequency during the week
+    @weekend_frequency - frequency during the weekend
+    @morning_frequency - frequency in the morning
+    @
     @frequency_from_other_pages - a dictionary from another page on the website
     @from
     functions:
