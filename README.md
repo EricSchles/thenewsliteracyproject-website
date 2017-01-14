@@ -1,4 +1,4 @@
-# Open Doors
+# News Literacy Project Website
 
 ## Installation
 
