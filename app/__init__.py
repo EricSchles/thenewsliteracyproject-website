@@ -6,11 +6,11 @@ from .commands import REPL
 import os
 
 app = Flask(__name__)
-username="open_doors_admin"
+username="news_literacy_admin"
 password="1234"
 #app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 app.config["SECRET_KEY"] = "testing"
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://"+username+":"+password+"@localhost/open_doors_db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://"+username+":"+password+"@localhost/new_literacy_db"
 db = SQLAlchemy(app)
 migrate = Migrate(app,db)
 manager = Manager(app)
