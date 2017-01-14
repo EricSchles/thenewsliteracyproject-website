@@ -1,4 +1,4 @@
-from app import app, db, viz
+from app import app, db
 from flask import request, render_template,redirect, url_for
 import json
 from app.models import *
