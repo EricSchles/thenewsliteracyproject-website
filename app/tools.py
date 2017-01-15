@@ -1,8 +1,11 @@
 from app.models import SiteVisits
 from app import db
 import json
+import plotly
+from plotly.graph_objs import Bar,Layout,Scatter, Box, Annotation,Marker,Font,XAxis,YAxis
+import shutil
 
-
+# page based logging
 def initialize_page(page_name):
     if SiteVisits.query.filter_by(page_name=page_name).count() == 0:
         page = SiteVisits(
@@ -92,3 +95,61 @@ def increment_page_frequency_count(page_name, timestamp):
     db.session.add(page)
     db.session.commit()
     return page
+
+
+def weekday_vs_weekend(page_name):
+    filename = "app/templates/"+page_name+"_weekday_v_weekend.html"
+    page = SiteVisits.query.filter_by(page_name=page_name).first()
+        
+    x_vals = ["overall page visits", "weekday", "weekend"] 
+    y_vals = [page.overall_frequency,
+              page.weekday_frequency, page.weekend_frequency]
+        
+    plotly.offline.plot({
+        "data":[Bar(x=x_vals,y=y_vals)],
+        "layout":Layout(
+            title="Visits During the Week and During the Weekend"
+        )
+    },auto_open=False)
+    shutil.move("temp-plot.html",filename)
+
+def weekly_breakdown_of_visits(page_name):
+    filename = "app/templates/"+page_name+"_weekly_breakdown_of_visits.html"
+    page = SiteVisits.query.filter_by(page_name=page_name).first()
+    lang_dict = {}
+        
+    x_vals = [ "overall page visits", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"] 
+    y_vals = [
+        page.overall_frequency,
+        page.monday_frequency, page.tuesday_frequency,
+        page.wednesday_frequency, page.thursday_frequency,
+        page.friday_frequency, page.saturday_frequency, page.sunday_frequency
+    ]
+        
+    plotly.offline.plot({
+        "data":[Bar(x=x_vals,y=y_vals)],
+        "layout":Layout(
+            title="Visits Over The Days Of The Week"
+        )
+    },auto_open=False)
+    shutil.move("temp-plot.html",filename)
+
+def time_of_day_breakdown_of_visits(page_name):
+    filename = "app/templates/"+page_name+"_time_of_day_breakdown_of_visits.html"
+    page = SiteVisits.query.filter_by(page_name=page_name).first()
+    lang_dict = {}
+        
+    x_vals = ["overall page visits","morning", "mid day", "afterwork", "latenight"] 
+    y_vals = [
+        page.overall_frequency,
+        page.morning_frequency, page.midday_frequency,
+        page.afterwork_frequency, page.latenight_frequency
+    ]
+        
+    plotly.offline.plot({
+        "data":[Bar(x=x_vals,y=y_vals)],
+        "layout":Layout(
+            title="Visits Over The Course Of A Day"
+        )
+    },auto_open=False)
+    shutil.move("temp-plot.html",filename)
