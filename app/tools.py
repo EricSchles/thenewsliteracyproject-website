@@ -32,9 +32,63 @@ def initialize_page(page_name):
     else:
         return "already initialized"
 
+def get_domain(url):
+    if "/" in url.split("//")[1]:
+        return url.split("//")[1].split("/")[0]
+    else:
+        return url.split("//")[1]
+    
+def increment_page_frequency_count(page_name, timestamp):
+    """
+    This function updates analytics based on when they visited the page.
+    
+    input:
+    @page_name - assumed to be a string passed in from the route
+    @timestamp - when the page was visited, assumed to be a python datetime object
+    
+    output:
+    Output is sent to the database and the database object is returned 
+    for debugging purposes
+    """
 
-def increment_page(page_name,from_page,to_page,timestamp):
+    from_page_domain = get_domain(from_page)
+    to_page_domain = get_domain(to_page)
     page = SiteVisits.query.filter_by(page_name=page_name).first()
     page.overall_frequency += 1
 
-    if timestamp.hour >=  
+    # time of day frequency 
+    if timestamp.hour >= 0 or timestamp.hour <= 5 or timestamp.hour >= 21:
+        page.latenight_frequency += 1
+    elif timestamp.hour >= 6 or timestamp.hour <= 11:
+        page.morning_frequency += 1
+    elif timestamp.hour >= 12 or timestamp.hour <= 17:
+        page.midday_frequency += 1
+    elif timestamp.hour >= 18 or timestamp.hour <= 20:
+        page.afterwork_frequency += 1
+    
+    # day of week frequency
+    if timestamp.weekday() == 0:
+        page.monday_frequency += 1
+    elif timestamp.weekday() == 1:
+        page.tuesday_frequency += 1
+    elif timestamp.weekday() == 2:
+        page.wednesday_frequency += 1
+    elif timestamp.weekday() == 3:
+        page.thursday_frequency += 1
+    elif timestmap.weekday() == 4:
+        page.friday_frequency += 1
+    elif timestamp.weekday() == 5:
+        page.saturday_frequency += 1
+    elif timestamp.weekday() == 6:
+        page.sunday_frequency += 1
+
+    # page visit during the week
+    if timestamp.weekday() < 5:
+        page.weekday_frequency += 1
+    else:
+        page.weekend_frequency += 1
+
+    SiteVisits.query.filter_by(page_name=page_name).delete()
+    db.session.add(page)
+    db.session.commit()
+    return page
