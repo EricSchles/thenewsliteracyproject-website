@@ -9,7 +9,7 @@ from app import tools
 @app.route("/",methods=["GET","POST"])
 @app.route("/index", methods=["GET","POST"])
 def index():
-    tools.increment_page_frequency_count("index", datetime.now())
+    #tools.increment_page_frequency_count("index", datetime.now())
     return render_template("index.html")
 
 @app.route("/for_students",methods=["GET","POST"])
