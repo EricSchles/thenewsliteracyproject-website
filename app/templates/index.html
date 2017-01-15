@@ -7,6 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Information form">
 <meta name="author" content="email@website.com"> <!-- email goes here! -->
+<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/universal.css') }}" rel="stylesheet">
 
 <title>The News Literary Project</title>
 
@@ -14,7 +16,9 @@
 <body>
 
 <div class="hdr">
-  <img class="hdr__logo" src="{{ url_for('static', filename='img/hdr-logo.jpg') }}" alt="logo">
+  <a class="hdr__logo-link" href="/">
+    <img class="hdr__logo-img" src="{{ url_for('static', filename='img/hdr-logo.png') }}" alt="logo">
+  </a>
   <div class="desktop-nav">
     <a href="#" class="desktop-nav__link">Newsletter</a>
     <a href="#" class="desktop-nav__link">Blogs</a>
@@ -33,9 +37,36 @@
   </div>
 </div>
 <div class="main">
-  <div class="main-story"></div>
-  <div class="main-story"></div>
-  <div class="main-story"></div>
+  <div class="main-story main-story--1">
+    <div class="main-story__copy">
+      <div class="main-story__hed">What is news literacy?</div>
+      <div class="main-story__dek">News literacy teaches that all information is not created equal. It helps young people use the aspirational standards of quality journalism to determine what they should trust, share and act on.</div>
+      <a href="#" class="main-story__link">
+        <span class="main-story__link-text">Learn More</span>
+        <span class="main-story__link-arrow">Learn More</span>
+      </a>
+    </div>
+  </div>
+  <div class="main-story main-story--2">
+    <div class="main-story__copy">
+      <img class="main-story__hed-img" src="{{ url_for('static', filename='img/checkology-story.png') }}" alt="">
+      <div class="main-story__dek"></div>
+      <a href="#" class="main-story__link">
+        <span class="main-story__link-text">Learn More</span>
+        <span class="main-story__link-arrow">Learn More</span>
+      </a>
+    </div>
+  </div>
+  <div class="main-story main-story--3">
+    <div class="main-story__copy">
+      <div class="main-story__hed"></div>
+      <div class="main-story__dek"></div>
+      <a href="#" class="main-story__link">
+        <span class="main-story__link-text">Learn More</span>
+        <span class="main-story__link-arrow">Learn More</span>
+      </a>
+    </div>
+  </div>
 </div>
 <div class="ftr"></div>
 
