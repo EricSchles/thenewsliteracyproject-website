@@ -18,7 +18,7 @@
 .desktop-nav__link {
   display: inline-block;
   font-family: Arial, sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   text-decoration: none;
   color: #000;
   margin-left: 33px;
@@ -38,7 +38,7 @@
 .main-nav__link {
   display: inline-block;
     font-family: Arial, sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     text-decoration: none;
     color: #000;
     margin-left: 16px;
@@ -54,7 +54,7 @@
 .main-nav__link--donate{
   color: green;
 }
-.main-nav__link--donate:hover,
+.main-nav__link--donate:hover
 .main-nav__link--donate:focus  {
   color: green;
   border-color: green;
