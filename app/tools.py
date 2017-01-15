@@ -78,7 +78,7 @@ def increment_page_frequency_count(page_name, timestamp):
         page.wednesday_frequency += 1
     elif timestamp.weekday() == 3:
         page.thursday_frequency += 1
-    elif timestmap.weekday() == 4:
+    elif timestamp.weekday() == 4:
         page.friday_frequency += 1
     elif timestamp.weekday() == 5:
         page.saturday_frequency += 1
@@ -91,7 +91,6 @@ def increment_page_frequency_count(page_name, timestamp):
     else:
         page.weekend_frequency += 1
 
-    SiteVisits.query.filter_by(page_name=page_name).delete()
     db.session.add(page)
     db.session.commit()
     return page
