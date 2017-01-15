@@ -17,7 +17,7 @@
 }
 .desktop-nav__link {
   display: inline-block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 18px;
   text-decoration: none;
   color: #000;
@@ -37,7 +37,7 @@
 }
 .main-nav__link {
   display: inline-block;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 20px;
     text-decoration: none;
     color: #000;
@@ -115,7 +115,7 @@
 .main-story__hed-img {}
 .main-story__dek {
   max-width: 910px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 31px;
   line-height: 1.4;
   font-weight: 400;
