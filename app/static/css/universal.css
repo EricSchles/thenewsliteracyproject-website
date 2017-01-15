@@ -56,6 +56,7 @@
 }
 .main-nav__link--donate:hover,
 .main-nav__link--donate:focus  {
+  color: green;
   border-color: green;
 }
 
@@ -66,6 +67,7 @@
 .main-story--1 {
   background: url(/static/img/hero-1.jpg) no-repeat center;
   background-size: cover;
+  /* The old syntax, deprecated and prefixed, for old browsers */
 }
 .main-story--1:before,
 .main-story--2:before {
@@ -81,15 +83,27 @@
 }
 .main-story--2 {
   background-color: #127591;
+  padding-top: 3%;
 }
 .main-story--3 {
   background: url(/static/img/hero-3.jpg) no-repeat center;
   background-size: cover;
 }
-.main-story__copy {
+.main-story__copy--2 {
   color: #fff;
-  padding: 20% 2% 5%;
-  background-color:
+  padding: 3% 2% 3%;
+}
+.main-story__copy--1,
+.main-story__copy--3 {
+  color: #fff;
+  padding: 20% 2% 3%;
+  background: -prefix-linear-gradient(top, rgba(0,0,0,0),
+    rgba(0,0,0,1)), url(http://foo.com/image.jpg);
+
+  /* The new syntax needed by standard-compliant browsers (Opera 12.1,
+     IE 10, Firefox 16, Chrome 26, Safari 6.1), without prefix */
+  background: linear-gradient(to bottom, rgba(0,0,0,0),
+    rgba(0,0,0,1)), url(http://foo.com/image.jpg);
 }
 .main-story__hed {
   font-family: times;
@@ -105,7 +119,29 @@
   font-size: 31px;
   line-height: 1.4;
   font-weight: 400;
+  padding-top: 11px;
 }
-.main-story__link {}
+.main-story__link {
+  margin-top: 30px;
+  display: inline-block;
+  border-radius: 6px;
+}
+.main-story__link:hover,
+.main-story__link:focus {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
 .main-story__link-text {}
 .main-story__link-arrow {}
+.ftr {
+  padding-bottom: 30px;
+}
+.ftr__standin-img--1 {
+  display: block;
+  width: 100%;
+}
+.ftr__standin-img--2 {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+}
