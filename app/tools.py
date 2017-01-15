@@ -54,8 +54,8 @@ def increment_page_frequency_count(page_name, timestamp):
     for debugging purposes
     """
 
-    from_page_domain = get_domain(from_page)
-    to_page_domain = get_domain(to_page)
+    # from_page_domain = get_domain(from_page)
+    # to_page_domain = get_domain(to_page)
     page = SiteVisits.query.filter_by(page_name=page_name).first()
     page.overall_frequency += 1
 
