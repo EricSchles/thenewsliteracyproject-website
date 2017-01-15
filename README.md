@@ -1,5 +1,7 @@
 # News Literacy Project Website
 
+[Dev website](http://thenewsliteracyproject.herokuapp.com/)
+
 ## Installation
 
 The first thing you'll need to do is clone this repo, it's preferred that you fork it and then submit pull requests from your fork.  This way we have clear providence of who did what, but also, it will be easier to roll back changes, should something be wrong, before committing to the canonical master repository.
