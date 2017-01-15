@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Information form">
+<meta name="author" content="email@website.com"> <!-- email goes here! -->
+
+<title>The News Literary Project</title>
+
+</head>
+<body>
+
+<div class="hdr">
+  <img class="hdr__logo" src="{{ url_for('static', filename='img/hdr-logo.jpg') }}" alt="logo">
+  <div class="desktop-nav">
+    <a href="#" class="desktop-nav__link">Newsletter</a>
+    <a href="#" class="desktop-nav__link">Blogs</a>
+    <a href="#" class="desktop-nav__link">In the News</a>
+    <a href="#" class="desktop-nav__link">Journalist Fellows</a>
+    <a href="#" class="desktop-nav__link">Contact</a>
+    <a href="#" class="desktop-nav__link">Support</a>
+  </div>
+  <div class="main-nav">
+    <a href="#" class="main-nav__link">For Students</a>
+    <a href="#" class="main-nav__link">For Educators</a>
+    <a href="#" class="main-nav__link">For Journalists</a>
+    <a href="#" class="main-nav__link">Services</a>
+    <a href="#" class="main-nav__link">checkology Virtual Classroom</a>
+    <a href="#" class="main-nav__link main-nav__link--donate">Donate</a>
+  </div>
+</div>
+<div class="main">
+  <div class="main-story"></div>
+  <div class="main-story"></div>
+  <div class="main-story"></div>
+</div>
+<div class="ftr"></div>
+
+<!-- jQuery -->
+<script src="{{url_for('static',filename='js/jquery.js') }}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{{url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+<!-- Plugin JavaScript -->
+<script src="{{url_for('static', filename='js/jquery.easing.min.js' ) }}"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="{{ url_for('static', filename='js/grayscale.js')}}"></script>
+<script src="{{url_for('static', filename='js/navbarcustom.js')}}"></script>
+
+<script>
+</body>
+</html>
