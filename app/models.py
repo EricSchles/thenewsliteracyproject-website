@@ -23,10 +23,12 @@ class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
     email = db.Column(db.String,unique=True) 
-
-    def __init__(self,name,email):
+    t = db.Column(db.Integer)
+    
+    def __init__(self,name,email, t):
         self.name = name
         self.email = email
+        self.t = t
 
     def __str__(self):
         return "<name: {}, email:{}>".format(self.name,self.email)
@@ -80,6 +82,7 @@ class SiteVisits(db.Model):
     latenight_frequency = db.Column(db.Integer)
     frequency_from_other_pages = db.Column(db.String)
     
+    
     def __init__(
             self,
             page_name,
@@ -119,6 +122,7 @@ class SiteVisits(db.Model):
         self.afterwork_frequency = afterwork_frequency
         self.latenight_frequency = latenight_frequency
         self.frequency_from_other_pages = frequency_from_other_pages
-
+        
+        
     def __str__(self):
         return "<name: {}, email:{}>".format(self.name,self.email)
